@@ -72,8 +72,18 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\book_closed.gif" />
+    <Content Include="Images\header.gif" />
+    <Content Include="Images\header_bg.gif" />
     <Content Include="packages.config" />
     <Content Include="Dorknozzle.master" />
+    <Content Include="Images\.svn\entries" />
+    <Content Include="Images\.svn\prop-base\book_closed.gif.svn-base" />
+    <Content Include="Images\.svn\prop-base\header.gif.svn-base" />
+    <Content Include="Images\.svn\prop-base\header_bg.gif.svn-base" />
+    <Content Include="Images\.svn\text-base\book_closed.gif.svn-base" />
+    <Content Include="Images\.svn\text-base\header.gif.svn-base" />
+    <Content Include="Images\.svn\text-base\header_bg.gif.svn-base" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -169,7 +179,6 @@
   <ItemGroup>
     <Folder Include="App_Themes\" />
     <Folder Include="bin\.svn\" />
-    <Folder Include="Images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

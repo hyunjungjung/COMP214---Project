@@ -33,7 +33,7 @@
               <StaticItemTemplate>
                 <img src="Images/book_closed.gif" alt="+"
                     width="16" height="16" style="border-width: 0;" />
-                <%# Eval("Text") %>
+                 <%# Eval("Text") %> 
               </StaticItemTemplate>
             </asp:Menu>
           </LoggedInTemplate>

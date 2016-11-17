@@ -18,7 +18,15 @@ public partial class EmployeeDirectory : System.Web.UI.Page
   {
     if (!IsPostBack)
     {
-      BindList();
+            try
+            {
+                BindList();
+            }
+            catch(Exception err)
+            {
+                error.Text = ("ERROR: " + err.Message);
+            }
+      
     }
   }
   protected void BindList()
@@ -33,9 +41,12 @@ public partial class EmployeeDirectory : System.Web.UI.Page
         "Dorknozzle"].ConnectionString;
     // Initialize connection
     conn = new OracleConnection(connectionString);
-    // Create command
-    comm = new OracleCommand(
-      "SELECT EmployeeID, Name, Username FROM Employees",
+        // Create command
+        // We need to update all sql statements with to make it work properly
+        // so in surround column/table names with escape character and "
+        // see sql statement below
+        comm = new OracleCommand(
+      "SELECT \"EmployeeID\", \"Name\", \"Username\" FROM \"Employees\"", 
       conn);
     // Enclose database code in Try-Catch-Finally
     try
@@ -50,6 +61,7 @@ public partial class EmployeeDirectory : System.Web.UI.Page
       // Close the reader
       reader.Close();
     }
+    // add catch here 
     finally
     {
       // Close the connection

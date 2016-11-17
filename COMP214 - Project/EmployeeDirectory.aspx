@@ -38,5 +38,6 @@
       <hr />
     </SeparatorTemplate>
   </asp:DataList>
+    <asp:Label ID="error" runat="server" />
 </asp:Content>
 

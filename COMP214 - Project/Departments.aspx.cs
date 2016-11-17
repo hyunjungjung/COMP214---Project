@@ -18,7 +18,14 @@ public partial class Departments : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            BindGrid();
+            try
+            {
+                BindGrid();
+            }
+            catch (Exception err)
+            {
+                Response.Write(err.Message);
+            }
         }
     }
     private void BindGrid()
