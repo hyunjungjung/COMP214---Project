@@ -45,7 +45,7 @@ public partial class Departments : System.Web.UI.Page
             conn = new OracleConnection(connectionString);
             // Create adapter
             adapter = new OracleDataAdapter(
-                "SELECT DepartmentID, Department FROM Departments",
+                "SELECT \"DepartmentID\", \"Department\" FROM \"Departments\"",
                 conn);
             // Fill the DataSet
             adapter.Fill(dataSet, "Departments");

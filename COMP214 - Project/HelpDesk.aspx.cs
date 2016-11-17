@@ -31,11 +31,11 @@ public partial class HelpDesk : System.Web.UI.Page
       conn = new OracleConnection(connectionString);
       // Create command to read the help desk categories
       categoryComm = new OracleCommand(
-          "SELECT CategoryID, Category FROM HelpDeskCategories",
+          "SELECT \"CategoryID\", \"Category\" FROM \"HelpDeskCategories\"",
           conn);
       // Create command to read the help desk subjects
       subjectComm = new OracleCommand(
-          "SELECT SubjectID, Subject FROM HelpDeskSubjects", conn);
+          "SELECT \"SubjectID\", \"Subject\" FROM \"HelpDeskSubjects\"", conn);
       // Enclose database code in Try-Catch-Finally
       try
       {

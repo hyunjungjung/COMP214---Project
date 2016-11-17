@@ -37,7 +37,7 @@ public partial class AdminTools : System.Web.UI.Page
     conn = new OracleConnection(connectionString);
     // Create command
     comm = new OracleCommand(
-        "SELECT EmployeeID, Name FROM Employees", conn);
+        "SELECT \"EmployeeID\", \"Name\" FROM \"Employees\"", conn);
     // Enclose database code in Try-Catch-Finally
     try
     {
@@ -93,9 +93,9 @@ public partial class AdminTools : System.Web.UI.Page
     conn = new OracleConnection(connectionString);
     // Create command
     comm = new OracleCommand(
-        "SELECT Name, Username, Address, City, State, Zip, " +
-        "HomePhone, Extension, MobilePhone FROM Employees " +
-        "WHERE EmployeeID = @EmployeeID", conn);
+        "SELECT \"Name\", \"Username\", \"Address\", \"City\", \"State\", \"Zip\", " +
+        "\"HomePhone\", \"Extension\", \"MobilePhone\" FROM \"Employees\" " +
+        "WHERE \"EmployeeID\" = @EmployeeID", conn);
     // Add command parameters
     comm.Parameters.Add("@EmployeeID", OracleDbType.Int32);
     comm.Parameters["@EmployeeID"].Value =
@@ -152,38 +152,38 @@ public partial class AdminTools : System.Web.UI.Page
     conn = new OracleConnection(connectionString);
     // Create command
     comm = new OracleCommand(
-        "UPDATE Employees SET Name=@Name, Username=@Username, " +
-        "Address=@Address, City=@City, State=@State, Zip=@Zip, " +
-        "HomePhone=@HomePhone, Extension=@Extension, " +
-        "MobilePhone=@MobilePhone " +
-        "WHERE EmployeeID=@EmployeeID", conn);
+        "UPDATE \"Employees\" SET \"Name\"=@Name, \"Username\"=@Username, " +
+        "\"Address\"=@Address, \"City\"=@City, \"State\"=@State, \"Zip\"=@Zip, " +
+        "\"HomePhone\"=@HomePhone, \"Extension\"=@Extension, " +
+        "\"MobilePhone\"=@MobilePhone " +
+        "WHERE \"EmployeeID\"=@EmployeeID", conn);
     // Add command parameters
     comm.Parameters.Add("@Name",
-        Oracle.DataAccess.Client.OracleDbType.Varchar2,50);
+        OracleDbType.Varchar2,50);
     comm.Parameters["@Name"].Value = nameTextBox.Text;
     comm.Parameters.Add("@Username",
-        Oracle.DataAccess.Client.OracleDbType.Varchar2, 50);
+        OracleDbType.Varchar2, 50);
     comm.Parameters["@Username"].Value = userNameTextBox.Text;
     comm.Parameters.Add("@Address",
-        Oracle.DataAccess.Client.OracleDbType.Varchar2, 50);
+        OracleDbType.Varchar2, 50);
     comm.Parameters["@Address"].Value = addressTextBox.Text;
     comm.Parameters.Add("@City",
-        Oracle.DataAccess.Client.OracleDbType.Varchar2, 50);
+        OracleDbType.Varchar2, 50);
     comm.Parameters["@City"].Value = cityTextBox.Text;
     comm.Parameters.Add("@State",
-        Oracle.DataAccess.Client.OracleDbType.Varchar2, 50);
+        OracleDbType.Varchar2, 50);
     comm.Parameters["@State"].Value = stateTextBox.Text;
     comm.Parameters.Add("@Zip",
-        Oracle.DataAccess.Client.OracleDbType.Varchar2, 50);
+        OracleDbType.Varchar2, 50);
     comm.Parameters["@Zip"].Value = zipTextBox.Text;
     comm.Parameters.Add("@HomePhone",
-        Oracle.DataAccess.Client.OracleDbType.Varchar2, 50);
+        OracleDbType.Varchar2, 50);
     comm.Parameters["@HomePhone"].Value = homePhoneTextBox.Text;
     comm.Parameters.Add("@Extension",
-        Oracle.DataAccess.Client.OracleDbType.Varchar2, 50);
+        OracleDbType.Varchar2, 50);
     comm.Parameters["@Extension"].Value = extensionTextBox.Text;
     comm.Parameters.Add("@MobilePhone",
-        Oracle.DataAccess.Client.OracleDbType.Varchar2, 50);
+        OracleDbType.Varchar2, 50);
     comm.Parameters["@MobilePhone"].Value = mobilePhoneTextBox.Text;
     comm.Parameters.Add("@EmployeeID", OracleDbType.Int32);
     comm.Parameters["@EmployeeID"].Value = 
@@ -222,8 +222,8 @@ public partial class AdminTools : System.Web.UI.Page
     // Initialize connection
     conn = new OracleConnection(connectionString);
     // Create command 
-    comm = new OracleCommand("DELETE FROM Employees " +
-        "WHERE EmployeeID = @EmployeeID", conn);
+    comm = new OracleCommand("DELETE FROM \"Employees\" " +
+        "WHERE \"EmployeeID\" = @EmployeeID", conn);
     // Add command parameters
     comm.Parameters.Add("@EmployeeID", Oracle.DataAccess.Client.OracleDbType.Int32);
     comm.Parameters["@EmployeeID"].Value =
